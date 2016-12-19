@@ -66,11 +66,10 @@
          <ul class="nav navbar-nav navbar-right">     
          	<li><a href="internal.php">Interner Bereich</a></li>       
             <li><a href="settings.php">Einstellungen</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a style="color:red" href="logout.php">Logout</a></li>
           </ul>   
         </div><!--/.navbar-collapse -->
         <?php endif; ?>
       </div>
     </nav>
 
-    
