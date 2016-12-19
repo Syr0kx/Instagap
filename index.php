@@ -26,7 +26,7 @@ if(isset($_POST['username']) && isset($_POST['passwort'])) {
 			setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
 		}
 
-		header("location: internal.php");
+		header("location: instagap.php");
 		exit;
 	} else {
 		$error_msg =  "Benutzername oder Passwort war ungültig<br><br>";

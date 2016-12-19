@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="internal.php"><i class="glyphicon glyphicon-camera logo"></i>Instagap</a>
+          <a class="navbar-brand" href="instagap.php"><i class="glyphicon glyphicon-camera logo"></i>Instagap</a>
         </div>
         <?php if(!is_checked_in()): ?>
         <div id="navbar" class="navbar-collapse collapse">
@@ -63,8 +63,8 @@
         <?php else: ?>
         <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-right">     
-         	<li><a href="internal.php">Interner Bereich</a></li>     
-           <li><a href="#">InstagramBot</a></li>  
+           <li><a href="instagap.php">InstagramBot</a></li>  
+         	  <li><a href="news.php">News</a></li>     
             <li><a href="settings.php">Einstellungen</a></li>
             <li><a style="color:red" href="logout.php">Logout</a></li>
           </ul>   
