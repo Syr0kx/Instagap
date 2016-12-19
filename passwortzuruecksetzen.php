@@ -54,7 +54,8 @@ if(isset($_GET['send'])) {
 
 include("templates/header.inc.php");
 ?>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+<link rel="stylesheet" href="style.css">
  <div class="container small-container-500">
  
 <h1>Neues Passwort vergeben</h1>

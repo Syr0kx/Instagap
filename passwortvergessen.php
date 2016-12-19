@@ -5,6 +5,8 @@ require_once("inc/functions.inc.php");
 
 include("templates/header.inc.php");
 ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+<link rel="stylesheet" href="style.css">
  <div class="container small-container-330">
 	<h2 >Passwort vergessen</h2>
 

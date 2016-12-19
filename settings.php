@@ -85,7 +85,8 @@ if(isset($_GET['save'])) {
 $user = check_user();
 
 ?>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+<link rel="stylesheet" href="style.css">
 <div class="container main-container">
 
 <h1>Einstellungen</h1>

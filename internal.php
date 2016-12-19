@@ -9,7 +9,8 @@ $user = check_user();
 
 include("templates/header.inc.php");
 ?>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+<link rel="stylesheet" href="style.css">
 <div class="container main-container">
 
 <h1>Herzlich Willkommen!</h1>
