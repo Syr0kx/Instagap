@@ -87,8 +87,8 @@ $user = check_user();
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
 <link rel="stylesheet" href="style.css">
-<div class="container main-container">
 
+<div class="container main-container">
 <h1>Einstellungen</h1>
 
 <?php 
@@ -121,6 +121,7 @@ endif;
 	<li role="presentation"><a href="#username" aria-controls="profile" role="tab" data-toggle="tab">Benutzername</a></li>
     <li role="presentation"><a href="#email" aria-controls="profile" role="tab" data-toggle="tab">E-Mail</a></li>
     <li role="presentation"><a href="#passwort" aria-controls="messages" role="tab" data-toggle="tab">Passwort</a></li>
+	<li role="presentation"><a href="#instagram" aria-controls="messages" role="tab" data-toggle="tab">Instagram verknüpfung</a></li>
   </ul>
 
   <!-- Persönliche Daten-->
@@ -149,7 +150,54 @@ endif;
 			</div>
     	</form>
     </div>
-    
+	<!-- Instagram verknüpfung-->
+	<div role="tabpanel" class="tab-pane" id="instagram">
+    	<br>
+    	<form action="?save=instagram" method="post" class="form-horizontal">
+	<div class="form-group">
+	<p>Momentan mit keinem Instagram Konto verknüpft :(</p>
+	<button style="background: #3897f0;color:white" class="ui button large">Verknüpfen</button>
+    <style>
+   .ui.form .field{margin-right: 30px; margin-left: 30px; margin-top: 1em}
+   .column.six.wide.form-holder{padding:0.0.0.0; background-color: #fff; border-radius: 1px; border: 1px solid #efefef}
+   </style>
+
+<div class="ui one column center aligned grid">
+	<div class="column six wide form-holder" style="width:350px!important;">
+		<p style="font-family:Billabong;font-size:50px;margin-bottom:-10px; padding-top:10px;">Instagram</p>
+		<form action="index.php" method="post">
+			<div class="ui form">
+				<div class="field">
+					<input type="text" style="margin:0.0.0.0" name="username" placeholder="Benutzername" autocomplete="off" required>
+				</div>
+				<div class="field">
+					<input type="password" style="margin:0.0.0.0" name="passwort" placeholder="Passwort" autocomplete="off" required>
+				</div>
+				<div class="field">
+					<input style="font-size:15px; background: #3897f0;color:white; margin-bottom: 30px" type="submit" value="Anmelden" class="ui button fluid large">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Änderung der E-Mail-Adresse -->
     <div role="tabpanel" class="tab-pane" id="email">
     	<br>

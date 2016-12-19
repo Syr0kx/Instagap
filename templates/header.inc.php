@@ -11,9 +11,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
-
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
   
@@ -64,12 +63,16 @@
         <?php else: ?>
         <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-right">     
-         	<li><a href="internal.php">Interner Bereich</a></li>       
+         	<li><a href="internal.php">Interner Bereich</a></li>     
+           <li><a href="#">InstagramBot</a></li>  
             <li><a href="settings.php">Einstellungen</a></li>
             <li><a style="color:red" href="logout.php">Logout</a></li>
           </ul>   
         </div><!--/.navbar-collapse -->
         <?php endif; ?>
       </div>
+
+
     </nav>
 
+   

@@ -25,3 +25,8 @@
   .ui.checkbox label {
     color: #ddd;
   }
+
+  @font-face {
+    font-family: Billabong;
+    src: url(fonts/Billabong.ttf);
+}
