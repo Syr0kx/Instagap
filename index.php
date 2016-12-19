@@ -37,6 +37,13 @@ if(isset($_POST['username']) && isset($_POST['passwort'])) {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
 <link rel="stylesheet" href="style.css">
+<style>
+{
+    /*http://images.google.de/imgres?imgurl=https%3A%2F%2Fstatic.pexels.com%2Fphotos%2F6547%2Fsky-night-space-galaxy.jpeg&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fdouble%2520exposure%2F&h=2672&w=5184&tbnid=2325Pcm-DmWkmM%3A&vet=1&docid=1eLStJcGFOeFtM&ei=LbdXWParHIXiUf_DoPAP&tbm=isch&iact=rc&uact=3&dur=944&page=0&start=0&ndsp=39&ved=0ahUKEwi29sX2hoDRAhUFcRQKHf8hCP4QMwgtKBEwEQ&bih=1110&biw=1600*/
+    background: url(images/1.jpeg) fixed;
+    background-size: cover;
+}
+</style>
 <div class="ui one column center aligned grid">
   <div class="column six wide form-holder">
     <h2 class="center aligned header form-head">Sign in</h2>
