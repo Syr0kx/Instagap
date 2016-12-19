@@ -45,7 +45,7 @@ while($row = $statement->fetch()) {
 </table>
 </div>
 
-
+<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1170141503%3Aplaylist%3A6PwW1ImlLWFkCsFjhjvJI5" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 </div>
 <?php 
 include("templates/footer.inc.php")
