@@ -17,7 +17,7 @@
   </head>
   <body>
   
-  <nav class="navbar navbar-inverse navbar-static-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -51,7 +51,7 @@
             </td>
 					</tr>
 					<tr>
-						<td><label style="margin-bottom: 0px; font-weight: normal;"><input type="checkbox" name="angemeldet_bleiben" value="remember-me" title="Angemeldet bleiben"  checked="checked" style="margin: 0; vertical-align: middle;" /> <small style="color: white">Angemeldet bleiben</small></label></td>
+						<td><label style="margin-bottom: 0px; font-weight: normal;"><input type="checkbox" name="angemeldet_bleiben" value="remember-me" title="Angemeldet bleiben"  checked="checked" style="margin: 0; vertical-align: middle;" /> <small>Angemeldet bleiben</small></label></td>
 						<td><small style="margin-left: 15px"><a href="passwortvergessen.php">Passwort vergessen</a></small></td>
 						<td></td>
 					</tr>					
@@ -72,3 +72,5 @@
         <?php endif; ?>
       </div>
     </nav>
+
+    
