@@ -26,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="internal.php"><i class="glyphicon glyphicon-leaf logo"></i>Instagap</a>
+          <a class="navbar-brand" href="internal.php"><i class="glyphicon glyphicon-camera logo"></i>Instagap</a>
         </div>
         <?php if(!is_checked_in()): ?>
         <div id="navbar" class="navbar-collapse collapse">
