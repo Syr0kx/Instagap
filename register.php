@@ -78,7 +78,6 @@ if(isset($_GET['register'])) {
 			$showFormular = false;
 		} else {
 			echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
-			echo $error;
 		}
 	} 
 }
