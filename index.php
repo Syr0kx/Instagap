@@ -37,7 +37,6 @@ if(isset($_POST['username']) && isset($_POST['passwort'])) {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
 <link rel="stylesheet" href="style.css">
-
 <div class="ui one column center aligned grid">
   <div class="column six wide form-holder">
     <h2 class="center aligned header form-head">Sign in</h2>
