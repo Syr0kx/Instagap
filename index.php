@@ -49,10 +49,10 @@ if(isset($error_msg) && !empty($error_msg)) {
     <form class="navbar-form navbar-right" action="index.php" method="post">
     <div class="ui form">
       <div class="field">
-        <input type="text" name="username" placeholder="username" required>
+        <input type="text" name="username" placeholder="username" autocomplete="off" required>
       </div>
       <div class="field">
-        <input type="password" name="passwort" placeholder="password" required>
+        <input type="password" name="passwort" placeholder="password" autocomplete="off" required>
       </div>
       <div class="field">
         <input type="submit" value="sign in" class="ui button large fluid green">
