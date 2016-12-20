@@ -40,8 +40,7 @@ try {
         $followers = array_merge($followers, $helper->getUsers());
     } while (!is_null($helper->getNextMaxId()));
 
-  $yourfollowerscount = count($followers);
-  echo $yourfollowerscount;
+  $yourfollowers = count($followers);
 } catch (Exception $e) {
     echo $e->getMessage();
 }
