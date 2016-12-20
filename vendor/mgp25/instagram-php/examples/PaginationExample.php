@@ -4,8 +4,8 @@ include '../../../../vendor/autoload.php';
 require '../src/Instagram.php';
 
 /////// CONFIG ///////
-$username = '';
-$password = '';
+$username = 'hackingismylifeanonymous';
+$password = 'passwort';
 $debug = false;
 //////////////////////
 
