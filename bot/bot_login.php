@@ -1,10 +1,8 @@
 <?php
-
 include '../vendor/autoload.php';
 require '../vendor/mgp25/instagram-php/src/Instagram.php';
 
 $user = check_user();
-echo htmlentities($user['id']);
 
 if(isset($_POST['username'])&&isset($_POST['passwort'])) {
 $username = $_POST['username'];
@@ -34,12 +32,13 @@ try {
 
   	if(!$error) { 
 		$statement = $pdo->prepare("SELECT * FROM instagram WHERE ID = :ID");
-		$result = $statement->execute(array(htmlentities($user['id'])));
+		$result = $statement->execute(array('ID' => $userid));
 		$user = $statement->fetch();
 		
 		if($user !== false) {
 			echo 'Dieser Account hat schon eine Instagram verknüpfung<br>';
 			$error = true;
+      echo $userid;
 		}	
 	}
 
@@ -47,10 +46,9 @@ try {
   {
     $passwort_hash = password_hash($password, PASSWORD_DEFAULT);
     $statement = $pdo->prepare("INSERT INTO instagram (ID, username, password) VALUES (:ID, :username, :password)");
-		$result = $statement->execute(array(htmlentities($user['id']), 'username' => $username, 'password' => $passwort_hash));
-		
+		$result = $statement->execute(array('ID' => $userid, 'username' => $username, 'password' => $passwort_hash));
 		if($result) {		
-        //refresh
+        header( "Location: ../sites/instagap.php" );
 		} else {
 			echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
 		}
