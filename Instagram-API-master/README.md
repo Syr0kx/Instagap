@@ -1,21 +1,3 @@
-#Instagap [![Coverage Status](https://coveralls.io/repos/github/boennemann/badges/badge.svg?branch=master)](https://coveralls.io/github/boennemann/badges?branch=master)
-
-Instagap is a social helper, executing daily tasks for you.
-So you can spend more time on the really important things.
-
-Use this for Reference: [Realtimeboard](https://realtimeboard.com/app/board/o9J_k0ytgTs=/ "Whiteboard")
-
-<<<<<<< HEAD
-=======
-#Tabellenstruktur für die Tabelle instagram:
-
-CREATE TABLE `instagram` (
-  `ID` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
 # ![logo](/examples/assets/instagram.png) Instagram PHP [![Latest Stable Version](https://poser.pugx.org/mgp25/instagram-php/v/stable)](https://packagist.org/packages/mgp25/instagram-php) [![Total Downloads](https://poser.pugx.org/mgp25/instagram-php/downloads)](https://packagist.org/packages/mgp25/instagram-php) ![compatible](https://img.shields.io/badge/PHP%207-Compatible-brightgreen.svg) [![License](https://poser.pugx.org/mgp25/instagram-php/license)](https://packagist.org/packages/mgp25/instagram-php)
 
 This is Instagram's private API. It has all the features the Instagram app has, including media upload.
@@ -58,7 +40,26 @@ You can download it here: [https://getcomposer.org/](https://getcomposer.org/)
 All examples can be found [here](https://github.com/mgp25/Instagram-API/tree/master/examples)
 
 
+## Why did i do the API?
+
+After legal measures, Facebook, WhatsApp and Instagram blocked my accounts. In order to use Instagram
+ on my phone i needed a new phone, as they banned my UDID, so that is basically why i made this API.
+
+### What is Instagram?
+According to [the company](https://instagram.com/about/faq/):
+
+> "Instagram is a fun and quirky way to share your life with friends through a series of pictures. Snap a photo with your mobile phone, then choose a filter to transform the image into a memory to keep around forever. We're building Instagram to allow you to experience moments in your friends' lives through pictures as they happen. We imagine a world more connected through photos."
+
+# License
+
+MIT
+
+# Terms and conditions
+
+- You will NOT use this API for marketing purposes (spam, massive sending...).
+- We do NOT give support to anyone that wants this API to send massive messages or similar.
+- We reserve the right to block any user of this repository that does not meet these conditions.
+
 ## Legal
 
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by Instagram or any of its affiliates or subsidiaries. This is an independent and unofficial API. Use at your own risk.
->>>>>>> origin/master
