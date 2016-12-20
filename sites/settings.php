@@ -81,9 +81,8 @@ if(isset($_GET['save'])) {
 		
 	}else if($save == 'instagram') {
 		
-		$sql = "DELETE FROM instagram WHERE ID = :ID";
-		$stmt = $pdo->prepare($sql);
-		$stmt->bindParam(':ID',htmlentities($user['id']));
+		$stmt = $pdo->prepare("DELETE FROM instagram WHERE ID = :ID");
+		$result = $statement->execute(array('ID' => htmlentities($user['id'])));
 		$stmt->execute();
 	}
 }
