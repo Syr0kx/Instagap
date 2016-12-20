@@ -1,4 +1,7 @@
     <!--Hier ist der BOT-->
+  <?php
+    include 'bot_logic.php'; 
+  ?>
 
      <style>
 	.container{min-height: calc(100% - 70px)!important};

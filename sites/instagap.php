@@ -16,7 +16,7 @@ $count = $stmt->rowCount();
 if($count > 0)
 {
 
-    include("../bot/bot.php");
+    include("../bot/bot_ui.php");
 
 }
 else
