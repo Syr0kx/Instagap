@@ -23,4 +23,6 @@ try {
     echo 'something went wrong '.$e->getMessage()."\n";
     exit(0);
 }
+
+//--> hier werden die settings gefetcht
 ?>
