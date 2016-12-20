@@ -1,40 +1,4 @@
-<?php 
-session_start();
-require_once("inc/config.inc.php");
-require_once("inc/functions.inc.php");
-//include("templates/header.inc.php")
 
-$error_msg = "";
-if(isset($_POST['username']) && isset($_POST['passwort'])) {
-	$username = $_POST['username'];
-	$passwort = $_POST['passwort'];
-	$statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-	$result = $statement->execute(array('username' => $username));
-	$user = $statement->fetch();
-	//Überprüfung des Passworts
-	if ($user !== false && password_verify($passwort, $user['passwort'])) {
-		$_SESSION['userid'] = $user['id'];
-
-		//Möchte der Nutzer angemeldet beleiben?
-		if(isset($_POST['angemeldet_bleiben'])) {
-      ?><script>alert("KRAAAS")</script><?php
-			$identifier = random_string();
-			$securitytoken = random_string();
-				
-			$insert = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (:user_id, :identifier, :securitytoken)");
-			$insert->execute(array('user_id' => $user['id'], 'identifier' => $identifier, 'securitytoken' => sha1($securitytoken)));
-			setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
-			setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
-		}
-
-		header("location: sites/instagap.php");
-		exit;
-	} else {
-		$error_msg =  "Benutzername oder Passwort war ungültig<br><br>";
-	}
-
-}
-?>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
 <link rel="stylesheet" href="css/style.css">
@@ -51,8 +15,8 @@ if(isset($error_msg) && !empty($error_msg)) {
 	echo $error_msg;
 }
 ?>
-    <form class="navbar-form navbar-right" action="index.php" method="post">
-    <div class="ui form">
+    <form class="navbar-form navbar-right" action="index.php" method="post" onsubmit="return loading();">
+    <div class="ui form" id="loginform">
       <div class="field">
         <input type="text" name="username" placeholder="username" autocomplete="off" required>
       </div>
@@ -71,6 +35,62 @@ if(isset($error_msg) && !empty($error_msg)) {
     </form>
   </div>
 </div>
+
+<?php 
+session_start();
+require_once("inc/config.inc.php");
+require_once("inc/functions.inc.php");
+//include("templates/header.inc.php")
+  ?>
+  <script type="text/javascript">
+  function loading()
+  {
+    document.getElementById("loginform").className = "ui loading form";
+  }
+    function notloading()
+  {
+    document.getElementById("loginform").className = "ui form";
+  }
+  </script>
+  <?php
+$error_msg = "";
+if(isset($_POST['username']) && isset($_POST['passwort'])) {
+?>
+  <?php
+	$username = $_POST['username'];
+	$passwort = $_POST['passwort'];
+	$statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+	$result = $statement->execute(array('username' => $username));
+	$user = $statement->fetch();
+	//Überprüfung des Passworts
+	if ($user !== false && password_verify($passwort, $user['passwort'])) {
+		$_SESSION['userid'] = $user['id'];
+
+		//Möchte der Nutzer angemeldet beleiben?
+		if(isset($_POST['angemeldet_bleiben'])) {
+			$identifier = random_string();
+			$securitytoken = random_string();
+				
+			$insert = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (:user_id, :identifier, :securitytoken)");
+			$insert->execute(array('user_id' => $user['id'], 'identifier' => $identifier, 'securitytoken' => sha1($securitytoken)));
+			setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
+			setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
+		}
+
+		header("location: sites/instagap.php");
+		exit;
+	} else {
+		$error_msg =  "Benutzername oder Passwort war ungültig<br><br>";
+    ?>
+    <script type="text/javascript">
+      notloading();
+    </script>
+    <?php
+	}
+
+}
+?>
+
 
 
 

@@ -27,8 +27,13 @@
           </button>
           <a class="navbar-brand" href="instagap.php"><i class="glyphicon glyphicon-camera logo"></i>Instagap</a>
         </div>
-        <?php if(!is_checked_in()): 
-          header( "Location: ../index.php" );
+        <?php if(!is_checked_in()&&basename($_SERVER['PHP_SELF'])!="register.php"): 
+              header( "Location: ../index.php" );
+              elseif(basename($_SERVER['PHP_SELF'])=="register.php"):
+              ?>
+              <div id="navbar" class="navbar-collapse collapse">
+            </div>
+      <?php
         else: ?>
         <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-right">     
