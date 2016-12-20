@@ -19,7 +19,7 @@ $i = new \InstagramAPI\Instagram($debug);
 $i->setUser($username, $password);
 
 try {
-    $i->login();
+    //$i->login();
 } catch (Exception $e) {
     echo 'something went wrong '.$e->getMessage()."\n";
     exit(0);
