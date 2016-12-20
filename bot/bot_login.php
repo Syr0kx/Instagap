@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../css/style.css">
    <style>
 	.container{min-height: calc(100% - 70px)!important};
    body{background: #fafafa;}

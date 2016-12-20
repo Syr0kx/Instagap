@@ -26,7 +26,7 @@ if(isset($_POST['username']) && isset($_POST['passwort'])) {
 			setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
 		}
 
-		header("location: instagap.php");
+		header("location: sites/instagap.php");
 		exit;
 	} else {
 		$error_msg =  "Benutzername oder Passwort war ungültig<br><br>";
@@ -36,7 +36,7 @@ if(isset($_POST['username']) && isset($_POST['passwort'])) {
 ?>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <style>
     /*http://images.google.de/imgres?imgurl=https%3A%2F%2Fstatic.pexels.com%2Fphotos%2F6547%2Fsky-night-space-galaxy.jpeg&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fdouble%2520exposure%2F&h=2672&w=5184&tbnid=2325Pcm-DmWkmM%3A&vet=1&docid=1eLStJcGFOeFtM&ei=LbdXWParHIXiUf_DoPAP&tbm=isch&iact=rc&uact=3&dur=944&page=0&start=0&ndsp=39&ved=0ahUKEwi29sX2hoDRAhUFcRQKHf8hCP4QMwgtKBEwEQ&bih=1110&biw=1600*/
     body { background: url(images/1.jpeg) fixed; background-size: cover;}
@@ -69,7 +69,7 @@ if(isset($error_msg) && !empty($error_msg)) {
       </div>
       <div class="inline field">
         <div class="ui label">
-          <label><a href="register.php">noch keinen Account?</a></label>
+          <label><a href="sites/register.php">noch keinen Account?</a></label>
         </div>
       </div>
     </div>

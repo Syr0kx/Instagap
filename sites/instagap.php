@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once("inc/config.inc.php");
-require_once("inc/functions.inc.php");
-include("templates/header.inc.php");
+require_once("../inc/config.inc.php");
+require_once("../inc/functions.inc.php");
+include("../templates/header.inc.php");
 $user = check_user();
 
 //überpüfung ob instagram account verbunden ist
@@ -12,16 +12,16 @@ $count = $select->rowCount();
 if($count > 0)
 {
 
-    include("bot.php");
+    include("../bot/bot.php");
 
 
 }
 else
 {
-    include("bot_login.php");
+    include("../bot/bot_login.php");
 }
 
-    include("templates/footer.inc.php");
+    include("../templates/footer.inc.php");
 ?>
 
     

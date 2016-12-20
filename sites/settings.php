@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once("inc/config.inc.php");
-require_once("inc/functions.inc.php");
+require_once("../inc/config.inc.php");
+require_once("../inc/functions.inc.php");
 
 
 //Überprüfe, dass der User eingeloggt ist
 //Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
 $user = check_user();
 
-include("templates/header.inc.php");
+include("../templates/header.inc.php");
 
 if(isset($_GET['save'])) {
 	$save = $_GET['save'];
@@ -86,7 +86,7 @@ $user = check_user();
 
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../css/style.css">
 
 <div class="container main-container">
 <h1>Einstellungen</h1>
@@ -297,5 +297,5 @@ else
 
 </div>
 <?php 
-include("templates/footer.inc.php")
+include("../templates/footer.inc.php")
 ?>

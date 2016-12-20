@@ -1,12 +1,12 @@
 <?php 
 session_start();
-require_once("inc/config.inc.php");
-require_once("inc/functions.inc.php");
+require_once("../inc/config.inc.php");
+require_once("../inc/functions.inc.php");
 
-include("templates/header.inc.php");
+include("../templates/header.inc.php");
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <div class="container small-container-330">
 	<h2>Passwort vergessen</h2>
 
@@ -33,7 +33,7 @@ if(isset($_GET['send']) ) {
 			$empfaenger = $user['email'];
 			$betreff = "Neues Passwort für deinen Account auf www.php-einfach.de"; //Ersetzt hier den Domain-Namen
 			$from = "From: Vorname Nachname <absender@domain.de>"; //Ersetzt hier euren Name und E-Mail-Adresse
-			$url_passwortcode = getSiteURL().'passwortzuruecksetzen.php?userid='.$user['id'].'&code='.$passwortcode; //Setzt hier eure richtige Domain ein
+			$url_passwortcode = getSiteURL().'sites/passwortzuruecksetzen.php?userid='.$user['id'].'&code='.$passwortcode; //Setzt hier eure richtige Domain ein
 			$text = 'Hallo '.$user['vorname'].',
 für deinen Account auf www.php-einfach.de wurde nach einem neuen Passwort gefragt. Um ein neues Passwort zu vergeben, rufe innerhalb der nächsten 24 Stunden die folgende Website auf:
 '.$url_passwortcode.'
@@ -78,5 +78,5 @@ endif; //Endif von if($showForm)
 
 
 <?php 
-include("templates/footer.inc.php")
+include("../templates/footer.inc.php")
 ?>

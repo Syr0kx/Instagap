@@ -1,15 +1,15 @@
 <?php 
 session_start();
-require_once("inc/config.inc.php");
-require_once("inc/functions.inc.php");
-include("templates/header.inc.php");
+require_once("../inc/config.inc.php");
+require_once("../inc/functions.inc.php");
+include("../templates/header.inc.php");
 $vorname = "";
 $nachname = "";
 $email = "";
 $username = "";
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../css/style.css">
 <div class="ui one column center aligned grid">
   <div class="column six wide form-holder">
     <h2 class="center aligned header form-head">Registrierung</h2>
@@ -74,7 +74,7 @@ if(isset($_GET['register'])) {
 		$result = $statement->execute(array('username' => $username, 'email' => $email, 'passwort' => $passwort_hash, 'vorname' => $vorname, 'nachname' => $nachname));
 		
 		if($result) {		
-			echo 'Du wurdest erfolgreich registriert. <a href="index.php">Zum Login</a>';
+			echo 'Du wurdest erfolgreich registriert. <a href="../index.php">Zum Login</a>';
 			$showFormular = false;
 		} else {
 			echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
@@ -121,5 +121,5 @@ if($showFormular) {
 ?>
 </div>
 <?php 
-include("templates/footer.inc.php")
+include("../templates/footer.inc.php")
 ?>
