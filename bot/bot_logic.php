@@ -7,6 +7,7 @@ require '../vendor/mgp25/instagram-php/src/Instagram.php';
 /////// CONFIG ///////
 
 $debug = false;
+$yourfollowers=0;
 //////////////////////
 
 // THIS IS AN EXAMPLE OF HOW TO USE NEXT_MAX_ID TO PAGINATE
@@ -18,11 +19,38 @@ $i = new \InstagramAPI\Instagram($debug);
 $i->setUser($username, $password);
 
 try {
-    //$i->login();
+    $i->login();
 } catch (Exception $e) {
     echo 'something went wrong '.$e->getMessage()."\n";
     exit(0);
 }
+ 
 
+ try {
+    $helper = null;
+    $followers = [];
+
+    do {
+        if (is_null($helper)) {
+            $helper = $i->getSelfUserFollowers();
+        } else {
+            $helper = $i->getSelfUserFollowers($helper->getNextMaxId());
+        }
+
+        $followers = array_merge($followers, $helper->getUsers());
+    } while (!is_null($helper->getNextMaxId()));
+
+  $yourfollowerscount = count($followers);
+
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+
+
+
+ count($followers);
+
+ //get followercount
 //--> hier werden die settings gefetcht
 ?>

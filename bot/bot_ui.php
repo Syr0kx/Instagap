@@ -3,7 +3,9 @@
      <style>
 	.container{min-height: calc(100% - 70px)!important};
     </style>
-
+<?php
+$yourfollowers=0;
+?>
 
     <div class="container">
 <div class="ui icon message">
