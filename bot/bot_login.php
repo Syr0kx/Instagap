@@ -5,7 +5,9 @@ require '../vendor/mgp25/instagram-php/src/Instagram.php';
 if(isset($_POST['username'])&&isset($_POST['passwort'])) {
 $username = $_POST['username'];
 $password = $_POST['passwort'];
+$user = check_user();
 $debug = false;
+$error = false;
 
 $i = new \InstagramAPI\Instagram($debug);
 
@@ -13,12 +15,46 @@ $i->setUser($username, $password);
 
 try {
     $i->login();
-    echo "login erfolgreich";
+
+	if(!$error) { 
+		$statement = $pdo->prepare("SELECT * FROM instagram WHERE username = :username");
+		$result = $statement->execute(array('username' => $username));
+		$user = $statement->fetch();
+		
+		if($user !== false) {
+			echo 'Dieser Instagramaccount ist bereits verlinkt<br>';
+			$error = true;
+		}	
+  }
+
+  	if(!$error) { 
+		$statement = $pdo->prepare("SELECT * FROM instagram WHERE id = :id");
+		$result = $statement->execute(array('id' => htmlentities($user['id'])));
+		$user = $statement->fetch();
+		
+		if($user !== false) {
+			echo 'Dieser Account hat schon eine Instagram verknüpfung<br>';
+			$error = true;
+		}	
+	}
+
+  if(!$error)
+  {
+    $passwort_hash = password_hash($password, PASSWORD_DEFAULT);
+    $statement = $pdo->prepare("INSERT INTO instagram (id, username, password) VALUES (:id, :username, :password)");
+		$result = $statement->execute(array('id' => htmlentities($user['id']), 'username' => $username, 'password' => $passwort_hash));
+		
+		if($result) {		
+        //refresh
+		} else {
+			echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
+		}
+  }
+
 } catch (Exception $e) {
     echo 'something went wrong '.$e->getMessage()."\n";
     exit(0);
 }
-
 }
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
