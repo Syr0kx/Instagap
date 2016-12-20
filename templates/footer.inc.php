@@ -9,7 +9,7 @@
 <div style="text-align:center; height:50px; background:#fafafa;" class="footer">
  <hr>
   
-  FOOOTER
+  FOOOTER 
   
   </div>
 

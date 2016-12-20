@@ -4,36 +4,18 @@ require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
 include("templates/header.inc.php");
 $user = check_user();
-?>
-<<<<<<< HEAD
-<?php
 
-///::PSEUDOCODE::
-
-//IF ID VON USER IST VORHANDEN IN INSTAGRAM => BOTSTARTEN
-//ELSE LOGINFENST		
-
+//überpüfung ob instagram account verbunden ist
 $select = $pdo->prepare("SELECT username FROM instagram WHERE instagram.id = ".htmlentities($user['id']));
 $select->execute();
 $count = $select->rowCount();
 if($count > 0)
 {
-    ?><h2>HIER IST DER BOT</h2>
-<?php
-
-
-}
-else
-{
-    include("bot_login.php");
-}
-?>
-=======
-
-
-<!-- hier muss überprüft werden ob der instagram account mit dem user account verknüpft is_string -->
-
-<div class="ui icon message">
+    ?>
+    
+    
+    <!--Hier ist der BOT-->
+    <div class="ui icon message">
   <i class="inbox icon"></i>
   <div class="content">
     <div class="header">
@@ -100,4 +82,17 @@ else
 
 
 
->>>>>>> origin/master
+
+
+<?php
+
+
+}
+else
+{
+    include("bot_login.php");
+}
+?>
+
+    
+</div>
