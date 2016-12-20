@@ -27,40 +27,9 @@
           </button>
           <a class="navbar-brand" href="instagap.php"><i class="glyphicon glyphicon-camera logo"></i>Instagap</a>
         </div>
-        <?php if(!is_checked_in()): ?>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" action="../index.php" method="post">
-			<table class="login" role="presentation">
-				<tbody>
-					<tr>
-						<td>							
-							<div class="field">
-								<input class="form-control" placeholder="Benutzername" name="username" type="text" required>								
-							</div>
-						</td>
-						<td>
-            <div class="field">
-            <input class="form-control" placeholder="Passwort" name="passwort" type="password" style="margin-left: 15px; margin-right: 15px" required>
-            </div>
-            </td>
-						<td>
-            <div class="field">
-            <input type="submit" class="ui button large fluid green" style="font-size: 13px;" value="Login">
-            </div>
-            </td>
-					</tr>
-					<tr>
-						<td><label style="margin-bottom: 0px; font-weight: normal;"><input type="checkbox" name="angemeldet_bleiben" value="remember-me" title="Angemeldet bleiben"  checked="checked" style="margin: 0; vertical-align: middle;" /> <small>Angemeldet bleiben</small></label></td>
-						<td><small style="margin-left: 15px"><a href="../sites/passwortvergessen.php">Passwort vergessen</a></small></td>
-						<td></td>
-					</tr>					
-				</tbody>
-			</table>		
-          
-            
-          </form>         
-        </div><!--/.navbar-collapse -->
-        <?php else: ?>
+        <?php if(!is_checked_in()): 
+          header( "Location: ../index.php" );
+        else: ?>
         <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-right">     
            <li><a href="instagap.php">InstagramBot</a></li>  

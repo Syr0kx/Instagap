@@ -40,7 +40,7 @@ function check_user() {
 	
 	
 	if(!isset($_SESSION['userid'])) {
-		die('Bitte zuerst <a href="index.php">einloggen</a>');
+		die('Bitte zuerst <a href="../index.php">einloggen</a>');
 	}
 	
 

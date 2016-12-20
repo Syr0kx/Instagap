@@ -17,6 +17,7 @@ if(isset($_POST['username']) && isset($_POST['passwort'])) {
 
 		//Möchte der Nutzer angemeldet beleiben?
 		if(isset($_POST['angemeldet_bleiben'])) {
+      ?><script>alert("KRAAAS")</script><?php
 			$identifier = random_string();
 			$securitytoken = random_string();
 				
@@ -60,12 +61,6 @@ if(isset($error_msg) && !empty($error_msg)) {
       </div>
       <div class="field">
         <input type="submit" value="sign in" class="ui button large fluid green">
-      </div>
-      <div class="inline field">
-        <div class="ui checkbox">
-          <input type="checkbox">
-          <label>an mich erinnern</label>
-        </div>
       </div>
       <div class="inline field">
         <div class="ui label">

@@ -79,6 +79,12 @@ if(isset($_GET['save'])) {
 			$success_msg = "Passwort erfolgreich gespeichert.";
 		}
 		
+	}else if($save == 'instagram') {
+		
+		$sql = "DELETE FROM instagram WHERE ID = :ID";
+		$stmt = $pdo->prepare($sql);
+		$stmt->bindParam(':ID',htmlentities($user['id']));
+		$stmt->execute();
 	}
 }
 
@@ -261,7 +267,7 @@ if($count > 0)
 	
 	<p style="text-align:center">Sie sind verbunden mit <?php echo $result;?><p>
 
-	<form action="#" method="post" class="form-horizontal">
+	<form action="?save=instagram" method="post" class="form-horizontal">
 		<div class="form-group">
 			<div class="col-sm-offset-5 col-sm-10">
 				<button style="color:white" class="ui button large red">Entknüpfen</button>
