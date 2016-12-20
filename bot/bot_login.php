@@ -2,10 +2,15 @@
 
 include '../vendor/autoload.php';
 require '../vendor/mgp25/instagram-php/src/Instagram.php';
+
+$user = check_user();
+echo htmlentities($user['id']);
+
 if(isset($_POST['username'])&&isset($_POST['passwort'])) {
 $username = $_POST['username'];
 $password = $_POST['passwort'];
-$user = check_user();
+
+
 $debug = false;
 $error = false;
 
@@ -29,7 +34,7 @@ try {
 
   	if(!$error) { 
 		$statement = $pdo->prepare("SELECT * FROM instagram WHERE ID = :ID");
-		$result = $statement->execute(array('ID' => htmlentities($user['id'])));
+		$result = $statement->execute(array(htmlentities($user['id'])));
 		$user = $statement->fetch();
 		
 		if($user !== false) {
@@ -42,7 +47,7 @@ try {
   {
     $passwort_hash = password_hash($password, PASSWORD_DEFAULT);
     $statement = $pdo->prepare("INSERT INTO instagram (ID, username, password) VALUES (:ID, :username, :password)");
-		$result = $statement->execute(array('ID' => htmlentities($user['id']), 'username' => $username, 'password' => $passwort_hash));
+		$result = $statement->execute(array(htmlentities($user['id']), 'username' => $username, 'password' => $passwort_hash));
 		
 		if($result) {		
         //refresh
