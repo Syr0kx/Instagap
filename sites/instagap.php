@@ -18,7 +18,6 @@ if($count > 0)
 
     include("../bot/bot.php");
 
-
 }
 else
 {

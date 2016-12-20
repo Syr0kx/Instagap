@@ -1,8 +1,8 @@
 
 <?php
 
-include '../../../../vendor/autoload.php';
-require '../src/Instagram.php';
+include '../vendor/autoload.php';
+require '../vendor/mgp25/instagram-php/src/Instagram.php';
 
 /////// CONFIG ///////
 
@@ -18,7 +18,7 @@ $i = new \InstagramAPI\Instagram($debug);
 $i->setUser($username, $password);
 
 try {
-    $i->login();
+    //$i->login();
 } catch (Exception $e) {
     echo 'something went wrong '.$e->getMessage()."\n";
     exit(0);
