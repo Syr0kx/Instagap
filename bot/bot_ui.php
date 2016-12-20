@@ -35,6 +35,9 @@ $yourfollowers=0;
             <div class="ui buttons"> 
                 <button class="ui button green">  running</button>
                 <button class="ui button loading"></button>
+                <label>your followers: <?php echo $yourfollowers; ?></label>
+
+
             </div> 
         </div>
     </div>
