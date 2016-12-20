@@ -5,17 +5,6 @@ So you can spend more time on the really important things.
 
 Use this for Reference: [Realtimeboard](https://realtimeboard.com/app/board/o9J_k0ytgTs=/ "Whiteboard")
 
-<<<<<<< HEAD
-=======
-#Tabellenstruktur für die Tabelle instagram:
-
-CREATE TABLE `instagram` (
-  `ID` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
 # ![logo](/examples/assets/instagram.png) Instagram PHP [![Latest Stable Version](https://poser.pugx.org/mgp25/instagram-php/v/stable)](https://packagist.org/packages/mgp25/instagram-php) [![Total Downloads](https://poser.pugx.org/mgp25/instagram-php/downloads)](https://packagist.org/packages/mgp25/instagram-php) ![compatible](https://img.shields.io/badge/PHP%207-Compatible-brightgreen.svg) [![License](https://poser.pugx.org/mgp25/instagram-php/license)](https://packagist.org/packages/mgp25/instagram-php)
 
 This is Instagram's private API. It has all the features the Instagram app has, including media upload.
@@ -61,4 +50,3 @@ All examples can be found [here](https://github.com/mgp25/Instagram-API/tree/mas
 ## Legal
 
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by Instagram or any of its affiliates or subsidiaries. This is an independent and unofficial API. Use at your own risk.
->>>>>>> origin/master
