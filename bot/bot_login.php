@@ -1,3 +1,30 @@
+<?php
+
+include '../vendor/autoload.php';
+require '../vendor/mgp25/instagram-php/src/Instagram.php';
+if(isset($_POST['username'])&&isset($_POST['passwort'])) {
+$username = $_POST['username'];
+$password = $_POST['passwort'];
+$debug = false;
+
+$i = new \InstagramAPI\Instagram($debug);
+
+$i->setUser($username, $password);
+
+try {
+    $i->login();
+    echo "login erfolgreich";
+} catch (Exception $e) {
+    echo 'something went wrong '.$e->getMessage()."\n";
+    exit(0);
+}
+
+
+
+echo "Benutzername: ".$username."\n";
+echo "Passwort: ".$passwort;
+}
+?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
 <link rel="stylesheet" href="../css/style.css">
    <style>
@@ -11,7 +38,7 @@
    <div class="ui one column center aligned grid">
     <div class="column six wide form-holder" style="width:350px!important;">
     <p>Instagram</p>
-    <form action="index.php" method="post">
+    <form action="../sites/instagap.php" method="post">
     <div class="ui form">
       <div class="field">
         <input type="text" style="margin:0.0.0.0" name="username" placeholder="Benutzername" autocomplete="off" required>
