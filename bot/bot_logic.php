@@ -41,15 +41,10 @@ try {
     } while (!is_null($helper->getNextMaxId()));
 
   $yourfollowerscount = count($followers);
-
+  echo $yourfollowerscount;
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-
-
-
-
- count($followers);
 
  //get followercount
 //--> hier werden die settings gefetcht
