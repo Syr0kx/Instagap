@@ -19,10 +19,6 @@ try {
     exit(0);
 }
 
-
-
-echo "Benutzername: ".$username."\n";
-echo "Passwort: ".$passwort;
 }
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
