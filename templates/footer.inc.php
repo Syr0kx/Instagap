@@ -1,10 +1,7 @@
 <?php 
 /**
- * Dies ist die Fußzeile eurer Seite. Gerne könnt ihr den 'Powered by'-Hinweis entfernen oder beliebig abändern.
- * Falls ihr unser Projekt auf www.php-einfach.de unterstützen möchtet, würde wir uns aber über eine 
- * Verlinkung sehr freuen.
- * 
- * @author: Nils Reimers / http://www.php-einfach.de/experte/php-codebeispiele/loginscript/
+ 
+ * @author: Fynn Merlevede / https://ellophantdesign.com
  * @license: GNU GPLv3
  */
 ?> 

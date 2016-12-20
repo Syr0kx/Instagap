@@ -7,11 +7,11 @@ include("templates/header.inc.php");
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
 <link rel="stylesheet" href="style.css">
- <div class="container small-container-330">
-	<h2 >Passwort vergessen</h2>
+<div class="container small-container-330">
+	<h2>Passwort vergessen</h2>
 
 
-<?php 
+	<?php 
 $showForm = true;
  
 if(isset($_GET['send']) ) {
@@ -54,27 +54,28 @@ dein PHP-Einfach.de-Team';
 }
  
 if($showForm):
-?> 
-	Gib hier deine E-Mail-Adresse ein, um ein neues Passwort anzufordern.<br><br>
-	 
+?> Gib hier deine E-Mail-Adresse ein, um ein neues Passwort anzufordern.<br><br>
+
 	<?php
 	if(isset($error) && !empty($error)) {
 		echo $error;
 	}
 	
 	?>
-	<form action="?send=1" method="post">
-		<label for="inputEmail">E-Mail</label>
-		<input class="form-control" placeholder="E-Mail" name="email" type="email" value="<?php echo isset($_POST['email']) ? htmlentities($_POST['email']) : ''; ?>" required>
-		<br>
-		<input  class="btn btn-lg btn-primary btn-block" type="submit" value="Neues Passwort">
-	</form> 
-<?php
+		<form action="?send=1" method="post">
+			<label for="inputEmail">E-Mail</label>
+			<input class="form-control" placeholder="E-Mail" name="email" type="email" value="<?php echo isset($_POST['email']) ? htmlentities($_POST['email']) : ''; ?>"
+				required>
+			<br>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" value="Neues Passwort">
+		</form>
+		<?php
 endif; //Endif von if($showForm)
 ?>
 
-</div> <!-- /container -->
- 
+</div>
+<!-- /container -->
+
 
 <?php 
 include("templates/footer.inc.php")
