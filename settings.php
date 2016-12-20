@@ -116,18 +116,17 @@ endif;
 <div>
 
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
+  <!--ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#data" aria-controls="home" role="tab" data-toggle="tab">Persönliche Daten</a></li>
 	<li role="presentation"><a href="#username" aria-controls="profile" role="tab" data-toggle="tab">Benutzername</a></li>
     <li role="presentation"><a href="#email" aria-controls="profile" role="tab" data-toggle="tab">E-Mail</a></li>
     <li role="presentation"><a href="#passwort" aria-controls="messages" role="tab" data-toggle="tab">Passwort</a></li>
 	<li role="presentation"><a href="#instagram" aria-controls="messages" role="tab" data-toggle="tab">Instagram verknüpfung</a></li>
-  </ul>
+  </ul-->
 
   <!-- Persönliche Daten-->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="data">
     	<br>
+		<h3 style="text-align:center">Namen ändern</h3>
     	<form action="?save=personal_data" method="post" class="form-horizontal">
     		<div class="form-group">
     			<label for="inputVorname" class="col-sm-2 control-label">Vorname</label>
@@ -145,63 +144,13 @@ endif;
     		
     		<div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary">Speichern</button>
+			      <button type="submit" class="ui button fluid large blue">Speichern</button>
 			    </div>
 			</div>
     	</form>
-    </div>
-	<!-- Instagram verknüpfung-->
-	<div role="tabpanel" class="tab-pane" id="instagram">
-    	<br>
-    	<form action="?save=instagram" method="post" class="form-horizontal">
-	<div class="form-group">
-	<p>Momentan mit keinem Instagram Konto verknüpft :(</p>
-	<button style="background: #3897f0;color:white" class="ui button large">Verknüpfen</button>
-    <style>
-   .ui.form .field{margin-right: 30px; margin-left: 30px; margin-top: 1em}
-   .column.six.wide.form-holder{padding:0.0.0.0; background-color: #fff; border-radius: 1px; border: 1px solid #efefef}
-   </style>
-
-<div class="ui one column center aligned grid">
-	<div class="column six wide form-holder" style="width:350px!important;">
-		<p style="font-family:Billabong;font-size:50px;margin-bottom:-10px; padding-top:10px;">Instagram</p>
-		<form action="index.php" method="post">
-			<div class="ui form">
-				<div class="field">
-					<input type="text" style="margin:0.0.0.0" name="username" placeholder="Benutzername" autocomplete="off" required>
-				</div>
-				<div class="field">
-					<input type="password" style="margin:0.0.0.0" name="passwort" placeholder="Passwort" autocomplete="off" required>
-				</div>
-				<div class="field">
-					<input style="font-size:15px; background: #3897f0;color:white; margin-bottom: 30px" type="submit" value="Anmelden" class="ui button fluid large">
-				</div>
-			</div>
-		</form>
-	</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Änderung der E-Mail-Adresse -->
-    <div role="tabpanel" class="tab-pane" id="email">
     	<br>
-    	<p>Zum Änderen deiner E-Mail-Adresse gib bitte dein aktuelles Passwort sowie die neue E-Mail-Adresse ein.</p>
+    	<h3 style="text-align:center">E-Mail ändern</h3>
     	<form action="?save=email" method="post" class="form-horizontal">
     		<div class="form-group">
     			<label for="inputPasswort" class="col-sm-2 control-label">Passwort</label>
@@ -227,16 +176,14 @@ endif;
     		
     		<div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary">Speichern</button>
+			      <button type="submit" class="ui button fluid large blue">Speichern</button>
 			    </div>
 			</div>
     	</form>
-    </div>
 
 	    <!-- Änderung des Benutzernamens -->
-    <div role="tabpanel" class="tab-pane" id="username">
     	<br>
-    	<p>Zum Änderen deines Benutzernamens gib bitte dein aktuelles Passwort sowie den neuen Benutzernamen ein.</p>
+    	<h3 style="text-align:center">Benutzernamen ändern</h3>
     	<form action="?save=username" method="post" class="form-horizontal">
     		<div class="form-group">
     			<label for="inputPasswort" class="col-sm-2 control-label">Passwort</label>
@@ -262,16 +209,14 @@ endif;
     		
     		<div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary">Speichern</button>
+			      <button type="submit" class="ui button fluid large blue">Speichern</button>
 			    </div>
 			</div>
     	</form>
-    </div>
     
     <!-- Änderung des Passworts -->
-    <div role="tabpanel" class="tab-pane" id="passwort">
     	<br>
-    	<p>Zum Änderen deines Passworts gib bitte dein aktuelles Passwort sowie das neue Passwort ein.</p>
+    	<h3 style="text-align:center">Passwort ändern</h3>
     	<form action="?save=passwort" method="post" class="form-horizontal">
     		<div class="form-group">
     			<label for="inputPasswort" class="col-sm-2 control-label">Altes Passwort</label>
@@ -297,12 +242,55 @@ endif;
     		
     		<div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary">Speichern</button>
+			      <button type="submit" class="ui button fluid large blue">Speichern</button>
 			    </div>
 			</div>
     	</form>
+	<!-- Instagram verknüpfung -->
+	<br>
+	<h3 style="text-align:center">Instagram-Konto</h3>
+<?php
+$select = $pdo->prepare("SELECT username FROM instagram WHERE instagram.id = ".htmlentities($user['id']));
+$select->execute();
+$result = $select->fetchColumn();
+$count = $select->rowCount();
+if($count > 0)
+{
+	
+    ?>
+	
+	<p style="text-align:center">Sie sind verbunden mit <?php echo $result;?><p>
+
+	<form action="#" method="post" class="form-horizontal">
+		<div class="form-group">
+			<div class="col-sm-offset-5 col-sm-10">
+				<button style="color:white" class="ui button large red">Entknüpfen</button>
+			</div>
+		</div>
+	</form>
+<?php
+
+
+}
+else
+{
+	?>
+		<p style="text-align:center">Momentan mit keinem Instagram Konto verknüpft :(</p>
+		
+    	<form action="instagap.php" method="post" class="form-horizontal">
+			<div class="form-group">
+				<div class="col-sm-offset-5 col-sm-10">
+					<button style="color:white" class="ui button large green">Verknüpfen</button>
+				</div>
+			</div>
+		</form>
+		<?php
+}
+?>
+
+		
+
     </div>
-  </div>
 
 </div>
 

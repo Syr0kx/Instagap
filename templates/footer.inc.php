@@ -8,12 +8,13 @@
  * @license: GNU GPLv3
  */
 ?> 
+
+<div style="text-align:center; height:50px; background:#fafafa;" class="footer">
  <hr>
-  <div class="container">
-  	<footer>
-        <p>Den footer müssen wir noch stylen</p>
-      </footer>
-   </div> 
+  
+  FOOOTER
+  
+  </div>
 
 
     <!-- Bootstrap core JavaScript
