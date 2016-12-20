@@ -28,8 +28,8 @@ try {
   }
 
   	if(!$error) { 
-		$statement = $pdo->prepare("SELECT * FROM instagram WHERE id = :id");
-		$result = $statement->execute(array('id' => htmlentities($user['id'])));
+		$statement = $pdo->prepare("SELECT * FROM instagram WHERE ID = :ID");
+		$result = $statement->execute(array('ID' => htmlentities($user['id'])));
 		$user = $statement->fetch();
 		
 		if($user !== false) {
@@ -41,8 +41,8 @@ try {
   if(!$error)
   {
     $passwort_hash = password_hash($password, PASSWORD_DEFAULT);
-    $statement = $pdo->prepare("INSERT INTO instagram (id, username, password) VALUES (:id, :username, :password)");
-		$result = $statement->execute(array('id' => htmlentities($user['id']), 'username' => $username, 'password' => $passwort_hash));
+    $statement = $pdo->prepare("INSERT INTO instagram (ID, username, password) VALUES (:ID, :username, :password)");
+		$result = $statement->execute(array('ID' => htmlentities($user['id']), 'username' => $username, 'password' => $passwort_hash));
 		
 		if($result) {		
         //refresh
