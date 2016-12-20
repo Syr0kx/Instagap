@@ -44,9 +44,8 @@ try {
 
   if(!$error)
   {
-    $passwort_hash = password_hash($password, PASSWORD_DEFAULT);
     $statement = $pdo->prepare("INSERT INTO instagram (ID, username, password) VALUES (:ID, :username, :password)");
-		$result = $statement->execute(array('ID' => $userid, 'username' => $username, 'password' => $passwort_hash));
+		$result = $statement->execute(array('ID' => $userid, 'username' => $username, 'password' => $password));
 		if($result) {		
         header( "Location: ../sites/instagap.php" );
 		} else {
