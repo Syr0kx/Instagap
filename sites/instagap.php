@@ -3,7 +3,6 @@ session_start();
 require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 include("../templates/header.inc.php");
-$running = true;
 $user = check_user();
 $userid  = htmlentities($user['id']);
 //überpüfung ob instagram account verbunden ist
@@ -18,6 +17,7 @@ if($count > 0)
 {
 
     include("../bot/bot_ui.php");
+    include("../bot/bot_worker.php");
 
 }
 else

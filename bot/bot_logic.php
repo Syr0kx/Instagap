@@ -3,10 +3,10 @@
 
 include '../vendor/autoload.php';
 require '../vendor/mgp25/instagram-php/src/Instagram.php';
-
 /////// CONFIG ///////
-
+$stop = false;
 $debug = false;
+$running = false;
 $yourfollowers=0;
 //////////////////////
 
@@ -19,32 +19,31 @@ $i = new \InstagramAPI\Instagram($debug);
 $i->setUser($username, $password);
 
 try {
-    //$i->login();
+    $i->login();
 } catch (Exception $e) {
     echo 'something went wrong '.$e->getMessage()."\n";
     exit(0);
 }
- 
+        try {
+                $helper = null;
+                $followers = [];
 
- try {
-    $helper = null;
-    $followers = [];
+                do {
+                    if (is_null($helper)) {
+                        $helper = $i->getSelfUserFollowers();
+                    } else {
+                        $helper = $i->getSelfUserFollowers($helper->getNextMaxId());
+                    }
 
-    do {
-        if (is_null($helper)) {
-            $helper = $i->getSelfUserFollowers();
-        } else {
-            $helper = $i->getSelfUserFollowers($helper->getNextMaxId());
-        }
+                    $followers = array_merge($followers, $helper->getUsers());
+                } while (!is_null($helper->getNextMaxId()));
 
-        $followers = array_merge($followers, $helper->getUsers());
-    } while (!is_null($helper->getNextMaxId()));
-
-  $yourfollowers = count($followers);
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+                $yourfollowers = count($followers);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+    }
 
  //get followercount
 //--> hier werden die settings gefetcht
+
 ?>

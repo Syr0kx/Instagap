@@ -17,8 +17,8 @@
     </style>
     <div class="container">
     <div class="one column row">
-    <div class="ui top attached label <?php if($running){echo 'green';}else{echo 'red';}?>"style="margin-top:50px; font-size:1em;">
-        <?php if($running){echo 'running...';}else{echo 'stopped';}?>
+    <div id="status_banner" class="ui top attached label red"style="margin-top:50px; font-size:1em;">
+        stopped
     </div>
 
 
@@ -41,15 +41,13 @@
     <div class="ui form">
         <div class="field" style="min-width: 400px;">
             <label>LOG</label>
-            <textarea style="background:black; color:green;">farming...</textarea>
+            <div><textarea id="text" style="background:black; color:green; overflow:hidden" readonly></textarea></div>
         </div>
     </div>
 
     <div class="two column row">
-        <form action="instagap.php" method="post">
-        <button type="submit" name="startstop" value="start" class="ui button tall <?php if($running){echo 'disabled';}else{echo '';}?> green">start bot</button>
-        <button type="submit" name="startstop" value="stop" class="ui button tall <?php if($running){echo '';}else{echo 'disabled';}?> red">stop bot</button>
-        </form>
+        <button id="start_button" class="ui button tall green" onclick="startBot()">start bot</button>
+        <button id="stop_button" class="ui button tall disabled red" onclick="stopBot()">stop bot</button>
     </div>
 
     <div class="one column row">
