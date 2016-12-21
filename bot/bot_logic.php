@@ -24,6 +24,7 @@ try {
     echo 'something went wrong '.$e->getMessage()."\n";
     exit(0);
 }
+$yourfollowers = getFollowers();
 function getFollowers(){
         try {
                 $helper = null;
