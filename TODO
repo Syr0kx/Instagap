@@ -1,0 +1,34 @@
+                                            TODO file
+
+PRIORITY: HIGH
+
+#   (function)  follow user for a specific hashtag
+#   (function)  like pictures for a specific hashtag
+#   (function)  comment on media for a specific hashtag
+#   (function)  remember all the id's who were followed by the bot
+#   (function)  unfollow users who are on the list and do not follow back (after two days or so) 
+
+
+
+
+
+
+
+PRIORITY: MEDIUM
+
+#   (function)  upload media
+#               scheduling --> upload a picture and set a timer for the date+time when it shall be uploaded to instagram
+#               implement statistics --> likes per week or total new followers per week or even followers per week per hashtag
+
+
+
+
+
+
+
+
+PRIORITY: LOW
+
+#               implement a deep following cycle: follow 2000 users for a specific # and wait. 
+                Then only like and comment on the media from those 2000 people.
+                After a while, unfollow the users who dont follow back...repeat!
