@@ -41,7 +41,7 @@
     <div class="ui form">
         <div class="field" style="min-width: 400px;">
             <label>LOG</label>
-            <div><textarea id="text" style="background:black; color:green; overflow:hidden" readonly></textarea></div>
+            <div><textarea id="text" style="background:black; color:green; overflow:hidden; resize: none;" readonly></textarea></div>
         </div>
     </div>
 
