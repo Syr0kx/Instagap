@@ -23,17 +23,6 @@
 
 
     </div>
-    
-<!--div class="ui icon message" style="margin-top:20px">
-  <i class="inbox icon"></i>
-  <div class="content">
-    <div class="header">
-      Have you checked your messages yet?
-    </div>
-    <p>There might be a gift for you!</p>
-  </div>
-</div-->
-
 
 <div class="ui centered one column grid" style="margin-top:50px">
 

@@ -5,45 +5,13 @@ So you can spend more time on the really important things.
 
 Use this for Reference: [Realtimeboard](https://realtimeboard.com/app/board/o9J_k0ytgTs=/ "Whiteboard")
 
-# ![logo](/examples/assets/instagram.png) Instagram PHP [![Latest Stable Version](https://poser.pugx.org/mgp25/instagram-php/v/stable)](https://packagist.org/packages/mgp25/instagram-php) [![Total Downloads](https://poser.pugx.org/mgp25/instagram-php/downloads)](https://packagist.org/packages/mgp25/instagram-php) ![compatible](https://img.shields.io/badge/PHP%207-Compatible-brightgreen.svg) [![License](https://poser.pugx.org/mgp25/instagram-php/license)](https://packagist.org/packages/mgp25/instagram-php)
+# ![compatible](https://img.shields.io/badge/PHP%207-Compatible-brightgreen.svg) 
 
-This is Instagram's private API. It has all the features the Instagram app has, including media upload.
-
-**Read the [wiki](https://github.com/mgp25/Instagram-API/wiki)** and previous issues before opening a new one! Maybe your issue is already answered.
-
-**Frequently Asked Questions:** [F.A.Q.](https://github.com/mgp25/Instagram-API/wiki/FAQ)
+**Read the [wiki](https://github.com/mgp25/Instagram-API/wiki)**  for instagramphp API.
 
 **Do you like this project? Support it by donating**
 - ![Paypal](https://raw.githubusercontent.com/reek/anti-adblock-killer/gh-pages/images/paypal.png) Paypal: [Donate](https://www.paypal.me/FynnMerlevede/5)
 ----------
-## Installation
-
-### Composer
-
-```sh
-composer require mgp25/instagram-php
-```
-
-```php
-require("../vendor/autoload.php");
-$instagram = new \InstagramAPI\Instagram();
-```
-
-If you want to test code that is in the master branch, which hasn't been pushed as a release, you can use master.
-
-```
-composer require mgp25/instagram-php dev-master
-```
-
-
-### Don't have Composer?
-
-You can download it here: [https://getcomposer.org/](https://getcomposer.org/)
-
-## Examples
-
-All examples can be found [here](https://github.com/mgp25/Instagram-API/tree/master/examples)
-
 
 ## Legal
 
