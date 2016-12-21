@@ -51,7 +51,7 @@
     </div>
 
     <div class="one column row">
-       <label>your followers: <?php echo $yourfollowers; ?></label>
+       <label id="follower_label">your followers: <?php echo $yourfollowers; ?></label>
     </div>
 <div class="centered four column row">
 

@@ -17,7 +17,6 @@ if($count > 0)
 {
 
     include("../bot/bot_ui.php");
-    include("../bot/bot_worker.php");
 
 }
 else

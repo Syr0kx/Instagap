@@ -24,6 +24,7 @@ try {
     echo 'something went wrong '.$e->getMessage()."\n";
     exit(0);
 }
+function getFollowers(){
         try {
                 $helper = null;
                 $followers = [];
@@ -42,6 +43,9 @@ try {
         } catch (Exception $e) {
             echo $e->getMessage();
     }
+    return $yourfollowers;
+}
+
 
  //get followercount
 //--> hier werden die settings gefetcht
@@ -64,7 +68,7 @@ function startBot(){
     document.getElementById("status_banner").className = "ui top attached label green";
     document.getElementById("start_button").className = "ui button tall disabled green";
     document.getElementById("stop_button").className = "ui button tall red";
-    refreshIntervalId = setInterval(updateLoop,1000);
+    refreshIntervalId = setInterval(updateLoop,2000);
 }
 function stopBot(){
     document.getElementById('status_banner').innerHTML = "stopped";
@@ -73,6 +77,7 @@ function stopBot(){
     document.getElementById("start_button").className = "ui button tall green";
     clearInterval(refreshIntervalId);
 }
+
 
 
 </script>
