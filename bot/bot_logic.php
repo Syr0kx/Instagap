@@ -95,21 +95,22 @@ function follow_by_tag($I){
 $hashtagString = '#design';
 
     try {
-                    $helper = null;
-                    $media = [];
-                    $users = [];
-                    $i=0;
+            $helper = null;
+            $media = [];
+            $users = [];
+            $i=0;
 
-                    do {
-                            if (is_null($helper)) {
+            do {
+                    if (is_null($helper)) {
                                 //puts media id array into helper
                                 $helper = $i->getHashtagFeed($hashtagString, $maxid = null);
-                            } else {
+                    } else {
                                 $helper = $i->getHashtagFeed($helper->getNextMaxId());
-                            }
+                    }
 
-                        $media = array_merge($media, $helper->getMediaId());
-                    } while (!is_null($helper->getNextMaxId()));
+                $media = array_merge($media, $helper->getMediaId());
+                
+                } while (!is_null($helper->getNextMaxId()));
 
                         //get media likers
                         foreach($media as $mediaId){
@@ -131,13 +132,6 @@ $hashtagString = '#design';
         }
 
 }
-//$i->getMediaLikers($mediaId);
-//foreach($media_liker as $userId){
-   // usleep()//alle 5min oder so 
-    //follow user(userId);
-
-
-
 
 function getFollowers($i){
         try {
@@ -160,10 +154,6 @@ function getFollowers($i){
     }
     return $yourfollowers;
 }
-
-
- //get followercount
-//--> hier werden die settings gefetcht
 
 ?>
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
@@ -192,5 +182,4 @@ function stopBot(){
     document.getElementById("start_button").className = "ui button tall green";
     clearInterval(refreshIntervalId);
 }
-
 </script>
