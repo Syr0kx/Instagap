@@ -67,6 +67,9 @@ while ($user_session_is_valid){
 // Call Functions like, follow , unfollow, and comment in a loop
 $yourfollowers = getFollowers($i);
 //usleep($likes_per_day /*24*60)/1000 ~maximal*/;//~1,2min
+//like_by_tag($i);
+
+usleep(240000); // alle 4 minuten wird gefollowed
 follow_by_tag($i);
 
 }
@@ -84,7 +87,33 @@ follow_by_tag($i);
 
 
 /////////////////////// FUNCTIONS END ///////////////////
+function follow_by_tag($I){
 
+$i->tagFeed($tag);
+
+$i->getMediaLikers($mediaId);
+
+ try {
+                $helper = null;
+                $followers = [];
+
+                do {
+                    if (is_null($helper)) {
+                        $helper = $i->getSelfUserFollowers();
+                    } else {
+                        $helper = $i->getSelfUserFollowers($helper->getNextMaxId());
+                    }
+
+                    $followers = array_merge($followers, $helper->getUsers());
+                } while (!is_null($helper->getNextMaxId()));
+
+                $yourfollowers = count($followers);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+    }
+    return $yourfollowers;
+
+}
 
 
 
