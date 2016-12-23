@@ -131,8 +131,6 @@ $hashtagString = '#design';
         }
 
 }
-//while läuft mach was
-
 //$i->getMediaLikers($mediaId);
 //foreach($media_liker as $userId){
    // usleep()//alle 5min oder so 
