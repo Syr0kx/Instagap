@@ -109,24 +109,24 @@ $hashtagString = '#design';
                     }
 
                 $media = array_merge($media, $helper->getMediaId());
-                
+
                 } while (!is_null($helper->getNextMaxId()));
 
-                        //get media likers
-                        foreach($media as $mediaId){
-                            $users = $i->getMediaLikers($mediaId);
-                        }
+            //get media likers
+            foreach($media as $mediaId){
+                $users = $i->getMediaLikers($mediaId);
+            }
                                 
-                    while(i<1){
-                        //Follow a user in the userlist
-                        foreach($users as $userId){
-                            $i->follow($userId);
-                            echo 'trying to follow user:'.$userId.'.';
-                            i++;
-                        }
-                    }
+            while(i<1){
+                //Follow a user in the userlist
+                foreach($users as $userId){
+                    $i->follow($userId);
+                    echo 'trying to follow user:'.$userId.'.';
+                    i++;
+                }
+            }
                     
-            } catch (Exception $e) {
+        } catch (Exception $e) {
                 echo $e->getMessage();
                 echo 'failed to follow userID:'. $userId;
         }
