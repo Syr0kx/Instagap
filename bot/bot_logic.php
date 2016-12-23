@@ -87,33 +87,57 @@ follow_by_tag($i);
 
 
 /////////////////////// FUNCTIONS END ///////////////////
+
+//$i->tagFeed($tag);//js function textbox->$tag !
+
 function follow_by_tag($I){
 
-$i->tagFeed($tag);
+$hashtagString = '#design';
 
-$i->getMediaLikers($mediaId);
+    try {
+                    $helper = null;
+                    $media = [];
+                    $users = [];
+                    $i=0;
 
- try {
-                $helper = null;
-                $followers = [];
+                    do {
+                            if (is_null($helper)) {
+                                //puts media id array into helper
+                                $helper = $i->getHashtagFeed($hashtagString, $maxid = null);
+                            } else {
+                                $helper = $i->getHashtagFeed($helper->getNextMaxId());
+                            }
 
-                do {
-                    if (is_null($helper)) {
-                        $helper = $i->getSelfUserFollowers();
-                    } else {
-                        $helper = $i->getSelfUserFollowers($helper->getNextMaxId());
+                        $media = array_merge($media, $helper->getMediaId());
+                    } while (!is_null($helper->getNextMaxId()));
+
+                        //get media likers
+                        foreach($media as $mediaId){
+                            $users = $i->getMediaLikers($mediaId);
+                        }
+                                
+                    while(i<1){
+                        //Follow a user in the userlist
+                        foreach($users as $userId){
+                            $i->follow($userId);
+                            echo 'trying to follow user:'.$userId.'.';
+                            i++;
+                        }
                     }
-
-                    $followers = array_merge($followers, $helper->getUsers());
-                } while (!is_null($helper->getNextMaxId()));
-
-                $yourfollowers = count($followers);
-        } catch (Exception $e) {
-            echo $e->getMessage();
-    }
-    return $yourfollowers;
+                    
+            } catch (Exception $e) {
+                echo $e->getMessage();
+                echo 'failed to follow userID:'. $userId;
+        }
 
 }
+//while läuft mach was
+
+//$i->getMediaLikers($mediaId);
+//foreach($media_liker as $userId){
+   // usleep()//alle 5min oder so 
+    //follow user(userId);
+
 
 
 
