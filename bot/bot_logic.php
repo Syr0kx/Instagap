@@ -66,7 +66,8 @@ while ($user_session_is_valid){
 
 // Call Functions like, follow , unfollow, and comment in a loop
 $yourfollowers = getFollowers($i);
-
+//usleep($likes_per_day /*24*60)/1000 ~maximal*/;//~1,2min
+follow_by_tag($i);
 
 }
 
