@@ -48,7 +48,7 @@
             <div class="ui label">
                 #
             </div>
-            <input type="text" placeholder="follows by hashtag">
+            <input id="hashTagText" type="text" placeholder="follows by hashtag">
               <button class="ui icon button">Go</button>
   </button>
         </div>

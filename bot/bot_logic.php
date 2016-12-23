@@ -122,7 +122,7 @@ $hashtagString = '#design';
                 foreach($users as $userId){
                     $i->follow($userId);
                     echo 'trying to follow user:'.$userId.'.';
-                    i++;
+                    $i++;
                 }
             }
                     
@@ -181,5 +181,9 @@ function stopBot(){
     document.getElementById("stop_button").className = "ui button tall disabled red";
     document.getElementById("start_button").className = "ui button tall green";
     clearInterval(refreshIntervalId);
+}
+function get_content_Hashtag(){
+ var html = document.getElementById("hashTagText").innerHTML;
+
 }
 </script>
