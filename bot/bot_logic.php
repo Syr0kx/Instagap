@@ -130,6 +130,4 @@ function stopBot(){
     clearInterval(refreshIntervalId);
 }
 
-
-
 </script>
