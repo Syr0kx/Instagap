@@ -42,6 +42,17 @@
     <div class="one column row">
        <label id="follower_label">your followers: <?php echo $yourfollowers; ?></label>
     </div>
+
+    <div>
+        <div class="ui labeled action input">
+            <div class="ui label">
+                #
+            </div>
+            <input type="text" placeholder="follows by hashtag">
+              <button class="ui icon button">Go</button>
+  </button>
+        </div>
+    </div>
 <div class="centered four column row">
 
     <div class="two column row">
