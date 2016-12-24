@@ -90,6 +90,7 @@ follow_by_tag($i);
 
 //$i->tagFeed($tag);//js function textbox->$tag !
 
+
 function follow_by_tag($I){
 
 $hashtagString = '#design';
