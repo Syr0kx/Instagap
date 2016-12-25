@@ -1,4 +1,5 @@
     <!--Hier ist der BOT-->
+  
   <?php
     include 'bot_logic.php'; 
     if(isset($_POST['startstop']))
